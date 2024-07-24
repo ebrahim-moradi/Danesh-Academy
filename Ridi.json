@@ -1,4 +1,4 @@
- {
+{
   "log": {
     "level": "warn",
     "output": "box.log",
@@ -147,7 +147,7 @@
         "2606:4700:110:8075:562:58ca:b439:2eea/128"
       ],
       "private_key": "qIdr1IuLmLjQq5GZEYurKKMB61tRWWREDK0i98mNuEg=",
-      "server": "188.114.98.224",
+      "server": "104.28.219.137",
       "server_port": 987,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "AAAA",
