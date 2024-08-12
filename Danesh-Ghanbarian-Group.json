@@ -1,3 +1,4 @@
+
 {
   "log": {
     "level": "warn",
@@ -34,6 +35,11 @@
     ],
     "rules": [
       {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "server": "dns-direct"
+      },
+      {
         "domain": "cp.cloudflare.com",
         "server": "dns-remote",
         "rewrite_ttl": 3000
@@ -42,12 +48,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
+        "188.114.97.1",
+        "188.114.96.1",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
         "104.17.148.22",
         "104.17.147.22",
         "188.114.96.3",
         "188.114.97.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3"
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
       ]
     },
     "independent_cache": true
@@ -69,7 +79,7 @@
       "type": "mixed",
       "tag": "mixed-in",
       "listen": "127.0.0.1",
-      "listen_port": 12334,
+      "listen_port": 2334,
       "sniff": true,
       "sniff_override_destination": true
     },
@@ -77,7 +87,9 @@
       "type": "direct",
       "tag": "dns-in",
       "listen": "127.0.0.1",
-      "listen_port": 16450
+      "listen_port": 6450,
+      "override_address": "1.1.1.1",
+      "override_port": 53
     }
   ],
   "outbounds": [
@@ -86,36 +98,12 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "💦 Warp 1 🇮🇷",
-        "💦 Warp 2 🇮🇷",
-        "💦 Warp 3 🇮🇷",
-        "💦 Warp 4 🇮🇷",
-        "💦 Warp 5 🇮🇷",
-        "💦 Warp 6 🇮🇷",
-        "💦 Warp 7 🇮🇷",
-        "💦 Warp 8 🇮🇷",
-        "💦 Warp 9 🇮🇷",
-        "💦 Warp 10 🇮🇷",
-        "💦 WoW 1 🌍",
-        "warp-ir_1",
-        "💦 WoW 2 🌍",
-        "warp-ir_2",
-        "💦 WoW 3 🌍",
-        "warp-ir_3",
-        "💦 WoW 4 🌍",
-        "warp-ir_4",
-        "💦 WoW 5 🌍",
-        "warp-ir_5",
-        "💦 WoW 6 🌍",
-        "warp-ir_6",
-        "💦 WoW 7 🌍",
-        "warp-ir_7",
-        "💦 WoW 8 🌍",
-        "warp-ir_8",
-        "💦 WoW 9 🌍",
-        "warp-ir_9",
-        "💦 WoW 10 🌍",
-        "warp-ir_10"
+        "Danesh1 § 0",
+        "Danesh2 § 1",
+        "Danesh3 § 2",
+        "Danesh4 § 3",
+        "Danesh5 § 4",
+        "Danesh6 § 5"
       ],
       "default": "auto"
     },
@@ -123,502 +111,119 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "💦 Warp 1 🇮🇷",
-        "💦 Warp 2 🇮🇷",
-        "💦 Warp 3 🇮🇷",
-        "💦 Warp 4 🇮🇷",
-        "💦 Warp 5 🇮🇷",
-        "💦 Warp 6 🇮🇷",
-        "💦 Warp 7 🇮🇷",
-        "💦 Warp 8 🇮🇷",
-        "💦 Warp 9 🇮🇷",
-        "💦 Warp 10 🇮🇷",
-        "💦 WoW 1 🌍",
-        "warp-ir_1",
-        "💦 WoW 2 🌍",
-        "warp-ir_2",
-        "💦 WoW 3 🌍",
-        "warp-ir_3",
-        "💦 WoW 4 🌍",
-        "warp-ir_4",
-        "💦 WoW 5 🌍",
-        "warp-ir_5",
-        "💦 WoW 6 🌍",
-        "warp-ir_6",
-        "💦 WoW 7 🌍",
-        "warp-ir_7",
-        "💦 WoW 8 🌍",
-        "warp-ir_8",
-        "💦 WoW 9 🌍",
-        "warp-ir_9",
-        "💦 WoW 10 🌍",
-        "warp-ir_10"
-       ],
-      "url": "http://connectivitycheck.gstatic.com/generate_204",
+        "Danesh1 § 0",
+        "Danesh2 § 1",
+        "Danesh3 § 2",
+        "Danesh4 § 3",
+        "Danesh5 § 4",
+        "Danesh6 § 5"
+      ],
+      "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
       "type": "wireguard",
-      "tag": "💦 Warp 1 🇮🇷",
-      "domain_strategy": "prefer_ipv6",
+      "tag": "Danesh1 § 0",
       "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:814b:4113:53c4:b2f9:c89e/128"
+        "172.16.0.2/24",
+        "2606:4700:110:8a70:3d46:7f0f:7c2e:cfa7/128"
       ],
-      "private_key": "4P+H4zoGzElDTY58SlmPsi1oCcJ+c2Cf6cK8SZiY7kk=",
-      "server": "162.159.195.93",
-      "server_port": 942,
+      "private_key": "iNzkePrxV3s5damPZPBfbDb5IeEuiCy42DdOWqQFjVg=",
+      "server": "188.114.98.72",
+      "server_port": 1018,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "QCX+",
-      "mtu": 1280
+      "reserved": "AAAA",
+      "mtu": 1280,
+      "fake_packets": "1-10",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
     },
     {
       "type": "wireguard",
-      "tag": "💦 Warp 2 🇮🇷",
-      "domain_strategy": "prefer_ipv6",
+      "tag": "Danesh2 § 1",
+      "detour": "Danesh1 § 0",
       "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:814b:4113:53c4:b2f9:c89e/128"
+        "172.16.0.2/24",
+        "2606:4700:110:8075:562:58ca:b439:2eea/128"
       ],
-      "private_key": "4P+H4zoGzElDTY58SlmPsi1oCcJ+c2Cf6cK8SZiY7kk=",
-      "server": "188.114.97.132",
-      "server_port": 942,
+      "private_key": "qIdr1IuLmLjQq5GZEYurKKMB61tRWWREDK0i98mNuEg=",
+      "server": "188.114.99.77",
+      "server_port": 908,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "QCX+",
-      "mtu": 1280
+      "reserved": "AAAA",
+      "mtu": 1120,
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
     },
     {
       "type": "wireguard",
-      "tag": "💦 Warp 3 🇮🇷",
-      "domain_strategy": "prefer_ipv6",
+      "tag": "Danesh3 § 2",
       "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:814b:4113:53c4:b2f9:c89e/128"
+        "172.16.0.2/24",
+        "2606:4700:110:8db1:c117:b2cf:3514:7c2f/128"
       ],
-      "private_key": "4P+H4zoGzElDTY58SlmPsi1oCcJ+c2Cf6cK8SZiY7kk=",
-      "server": "162.159.192.245",
-      "server_port": 942,
+      "private_key": "cFpkQLp0/aZEl23iGEf1klkivS3Tj5x9R1B12gELukE=",
+      "server": "162.159.192.252",
+      "server_port": 1002,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "QCX+",
-      "mtu": 1280
+      "reserved": "AAAA",
+      "mtu": 1280,
+      "fake_packets": "1-10",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
     },
     {
       "type": "wireguard",
-      "tag": "💦 Warp 4 🇮🇷",
-      "domain_strategy": "prefer_ipv6",
+      "tag": "Danesh4 § 3",
+      "detour": "Danesh3 § 2",
       "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:814b:4113:53c4:b2f9:c89e/128"
+        "172.16.0.2/24",
+        "2606:4700:110:8409:85e:e3f1:1367:aeb/128"
       ],
-      "private_key": "4P+H4zoGzElDTY58SlmPsi1oCcJ+c2Cf6cK8SZiY7kk=",
-      "server": "162.159.192.97",
-      "server_port": 942,
+      "private_key": "SF/uaKJxhYuvNorc/OZ+m0m/kBs/vG548fFjn3+hzkE=",
+      "server": "188.114.99.245",
+      "server_port": 8854,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "QCX+",
-      "mtu": 1280
+      "reserved": "AAAA",
+      "mtu": 1120,
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
     },
     {
       "type": "wireguard",
-      "tag": "💦 Warp 5 🇮🇷",
-      "domain_strategy": "prefer_ipv6",
+      "tag": "Danesh5 § 4",
+      "detour": "Danesh4 § 3",
       "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:814b:4113:53c4:b2f9:c89e/128"
+        "172.16.0.2/24",
+        "2606:4700:110:8e8e:f056:7cd7:1c:b55a/128"
       ],
-      "private_key": "4P+H4zoGzElDTY58SlmPsi1oCcJ+c2Cf6cK8SZiY7kk=",
-      "server": "162.159.192.99",
-      "server_port": 942,
+      "private_key": "kDt1f3cUJOwrJ0IW7qYY/RybnZrYM8h3MVNDsAnd2XM=",
+      "server": "188.114.96.125",
+      "server_port": 4198,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "QCX+",
-      "mtu": 1280
+      "reserved": "AAAA",
+      "mtu": 1120,
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
     },
     {
       "type": "wireguard",
-      "tag": "💦 Warp 6 🇮🇷",
-      "domain_strategy": "prefer_ipv6",
+      "tag": "Danesh6 § 5",
+      "detour": "Danesh5 § 4",
       "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:814b:4113:53c4:b2f9:c89e/128"
+        "172.16.0.2/24",
+        "2606:4700:110:8847:906e:7cec:823f:9f01/128"
       ],
-      "private_key": "4P+H4zoGzElDTY58SlmPsi1oCcJ+c2Cf6cK8SZiY7kk=",
-      "server": "162.159.195.64",
-      "server_port": 942,
+      "private_key": "wKqC3cBWKTxXd/xuIMeALn6jQDj6KXGoxO6WCO38LVA=",
+      "server": "sky.rethinkdns.com",
+      "server_port": 1002,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "QCX+",
-      "mtu": 1280
+      "reserved": "AAAA",
+      "mtu": 1120,
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
     },
-    {
-      "type": "wireguard",
-      "tag": "💦 Warp 7 🇮🇷",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:814b:4113:53c4:b2f9:c89e/128"
-      ],
-      "private_key": "4P+H4zoGzElDTY58SlmPsi1oCcJ+c2Cf6cK8SZiY7kk=",
-      "server": "188.114.96.103",
-      "server_port": 500,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "QCX+",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "💦 Warp 8 🇮🇷",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:814b:4113:53c4:b2f9:c89e/128"
-      ],
-      "private_key": "4P+H4zoGzElDTY58SlmPsi1oCcJ+c2Cf6cK8SZiY7kk=",
-      "server": "188.114.97.138",
-      "server_port": 500,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "QCX+",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "💦 Warp 9 🇮🇷",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:814b:4113:53c4:b2f9:c89e/128"
-      ],
-      "private_key": "4P+H4zoGzElDTY58SlmPsi1oCcJ+c2Cf6cK8SZiY7kk=",
-      "server": "188.114.97.233",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "QCX+",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "💦 Warp 10 🇮🇷",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:814b:4113:53c4:b2f9:c89e/128"
-      ],
-      "private_key": "4P+H4zoGzElDTY58SlmPsi1oCcJ+c2Cf6cK8SZiY7kk=",
-      "server": "188.114.98.252",
-      "server_port": 500,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "QCX+",
-      "mtu": 1280
-    },
-  {
-      "type": "wireguard",
-      "tag": "💦 WoW 1 🌍",
-      "detour": "warp-ir_1",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:8545:4c4e:b6da:5aa5:4396/128"
-      ],
-      "private_key": "ENxdxRpWxyM/jvMXs8ZwPo+IBFG9TbT3CITugqE/+HU=",
-      "server": "162.159.195.93",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "N2pv",
-      "mtu": 1230
-    },
-    {
-      "type": "wireguard",
-      "tag": "warp-ir_1",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:856c:a941:56f4:a291:1ffe/128"
-      ],
-      "private_key": "4D/XT//qSLssK+fQvZDkLzfceanRa63xWrUKcFvfb2c=",
-      "server": "162.159.195.93",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "Hv6h",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "💦 WoW 2 🌍",
-      "detour": "warp-ir_2",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:8545:4c4e:b6da:5aa5:4396/128"
-      ],
-      "private_key": "ENxdxRpWxyM/jvMXs8ZwPo+IBFG9TbT3CITugqE/+HU=",
-      "server": "188.114.97.132",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "N2pv",
-      "mtu": 1230
-    },
-    {
-      "type": "wireguard",
-      "tag": "warp-ir_2",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:856c:a941:56f4:a291:1ffe/128"
-      ],
-      "private_key": "4D/XT//qSLssK+fQvZDkLzfceanRa63xWrUKcFvfb2c=",
-      "server": "188.114.97.132",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "Hv6h",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "💦 WoW 3 🌍",
-      "detour": "warp-ir_3",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:8545:4c4e:b6da:5aa5:4396/128"
-      ],
-      "private_key": "ENxdxRpWxyM/jvMXs8ZwPo+IBFG9TbT3CITugqE/+HU=",
-      "server": "162.159.192.245",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "N2pv",
-      "mtu": 1230
-    },
-    {
-      "type": "wireguard",
-      "tag": "warp-ir_3",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:856c:a941:56f4:a291:1ffe/128"
-      ],
-      "private_key": "4D/XT//qSLssK+fQvZDkLzfceanRa63xWrUKcFvfb2c=",
-      "server": "162.159.192.245",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "Hv6h",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "💦 WoW 4 🌍",
-      "detour": "warp-ir_4",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:8545:4c4e:b6da:5aa5:4396/128"
-      ],
-      "private_key": "ENxdxRpWxyM/jvMXs8ZwPo+IBFG9TbT3CITugqE/+HU=",
-      "server": "162.159.192.97",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "N2pv",
-      "mtu": 1230
-    },
-    {
-      "type": "wireguard",
-      "tag": "warp-ir_4",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:856c:a941:56f4:a291:1ffe/128"
-      ],
-      "private_key": "4D/XT//qSLssK+fQvZDkLzfceanRa63xWrUKcFvfb2c=",
-      "server": "162.159.192.97",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "Hv6h",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "💦 WoW 5 🌍",
-      "detour": "warp-ir_5",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:8545:4c4e:b6da:5aa5:4396/128"
-      ],
-      "private_key": "ENxdxRpWxyM/jvMXs8ZwPo+IBFG9TbT3CITugqE/+HU=",
-      "server": "162.159.192.99",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "N2pv",
-      "mtu": 1230
-    },
-    {
-      "type": "wireguard",
-      "tag": "warp-ir_5",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:856c:a941:56f4:a291:1ffe/128"
-      ],
-      "private_key": "4D/XT//qSLssK+fQvZDkLzfceanRa63xWrUKcFvfb2c=",
-      "server": "162.159.192.99",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "Hv6h",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "💦 WoW 6 🌍",
-      "detour": "warp-ir_6",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:8545:4c4e:b6da:5aa5:4396/128"
-      ],
-      "private_key": "ENxdxRpWxyM/jvMXs8ZwPo+IBFG9TbT3CITugqE/+HU=",
-      "server": "162.159.195.64",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "N2pv",
-      "mtu": 1230
-    },
-    {
-      "type": "wireguard",
-      "tag": "warp-ir_6",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:856c:a941:56f4:a291:1ffe/128"
-      ],
-      "private_key": "4D/XT//qSLssK+fQvZDkLzfceanRa63xWrUKcFvfb2c=",
-      "server": "162.159.195.64",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "Hv6h",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "💦 WoW 7 🌍",
-      "detour": "warp-ir_7",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:8545:4c4e:b6da:5aa5:4396/128"
-      ],
-      "private_key": "ENxdxRpWxyM/jvMXs8ZwPo+IBFG9TbT3CITugqE/+HU=",
-      "server": "188.114.96.103",
-      "server_port": 500,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "N2pv",
-      "mtu": 1230
-    },
-    {
-      "type": "wireguard",
-      "tag": "warp-ir_7",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:856c:a941:56f4:a291:1ffe/128"
-      ],
-      "private_key": "4D/XT//qSLssK+fQvZDkLzfceanRa63xWrUKcFvfb2c=",
-      "server": "188.114.96.103",
-      "server_port": 500,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "Hv6h",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "💦 WoW 8 🌍",
-      "detour": "warp-ir_8",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:8545:4c4e:b6da:5aa5:4396/128"
-      ],
-      "private_key": "ENxdxRpWxyM/jvMXs8ZwPo+IBFG9TbT3CITugqE/+HU=",
-      "server": "188.114.97.138",
-      "server_port": 500,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "N2pv",
-      "mtu": 1230
-    },
-    {
-      "type": "wireguard",
-      "tag": "warp-ir_8",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:856c:a941:56f4:a291:1ffe/128"
-      ],
-      "private_key": "4D/XT//qSLssK+fQvZDkLzfceanRa63xWrUKcFvfb2c=",
-      "server": "188.114.97.138",
-      "server_port": 500,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "Hv6h",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "💦 WoW 9 🌍",
-      "detour": "warp-ir_9",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:8545:4c4e:b6da:5aa5:4396/128"
-      ],
-      "private_key": "ENxdxRpWxyM/jvMXs8ZwPo+IBFG9TbT3CITugqE/+HU=",
-      "server": "188.114.97.233",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "N2pv",
-      "mtu": 1230
-    },
-    {
-      "type": "wireguard",
-      "tag": "warp-ir_9",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:856c:a941:56f4:a291:1ffe/128"
-      ],
-      "private_key": "4D/XT//qSLssK+fQvZDkLzfceanRa63xWrUKcFvfb2c=",
-      "server": "188.114.97.233",
-      "server_port": 942,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "Hv6h",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "💦 WoW 10 🌍",
-      "detour": "warp-ir_10",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:8545:4c4e:b6da:5aa5:4396/128"
-      ],
-      "private_key": "ENxdxRpWxyM/jvMXs8ZwPo+IBFG9TbT3CITugqE/+HU=",
-      "server": "188.114.98.252",
-      "server_port": 500,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "N2pv",
-      "mtu": 1230
-    },
-    {
-      "type": "wireguard",
-      "tag": "warp-ir_10",
-      "domain_strategy": "prefer_ipv6",
-      "local_address": [
-        "172.16.0.2/32",
-        "2606:4700:110:856c:a941:56f4:a291:1ffe/128"
-      ],
-      "private_key": "4D/XT//qSLssK+fQvZDkLzfceanRa63xWrUKcFvfb2c=",
-      "server": "188.114.98.252",
-      "server_port": 500,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "Hv6h",
-      "mtu": 1280
-    },
-   
     {
       "type": "dns",
       "tag": "dns-out"
@@ -632,8 +237,8 @@
       "tag": "direct-fragment",
       "tls_fragment": {
         "enabled": true,
-        "size": "10-30",
-        "sleep": "2-8"
+        "size": "1-500",
+        "sleep": "0-500"
       }
     },
     {
@@ -646,6 +251,12 @@
     }
   ],
   "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
     "rules": [
       {
         "inbound": "dns-in",
@@ -662,6 +273,12 @@
       {
         "clash_mode": "Global",
         "outbound": "select"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
       }
     ],
     "final": "select",
@@ -674,8 +291,8 @@
       "path": "clash.db"
     },
     "clash_api": {
-      "external_controller": "127.0.0.1:16756",
-      "secret": "c3Mv_CLaGfs7imLS"
+      "external_controller": "127.0.0.1:6756",
+      "secret": "ygG5P57EBdxN4V6W"
     }
   }
 }
