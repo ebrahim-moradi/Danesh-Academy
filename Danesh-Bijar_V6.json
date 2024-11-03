@@ -34,7 +34,7 @@
     ],
     "rules": [
       {
-        "domain": "b6m0l2onricuftpa6opz",
+        "domain": "72gboktedcbblnkqgv9a",
         "server": "dns-direct"
       },
       {
@@ -56,17 +56,17 @@
     ],
     "final": "dns-remote",
     "static_ips": {
-      "b6m0l2onricuftpa6opz": [
-        "2606:4700:d0:0:c95d:7a4f:d7aa:3df5",
-        "188.114.97.221"
+      "72gboktedcbblnkqgv9a": [
+        "2606:4700:d1:0:4164:533e:ba72:bbec",
+        "188.114.98.215"
       ],
       "sky.rethinkdns.com": [
-        "104.17.147.22",
         "104.17.148.22",
-        "188.114.96.3",
+        "104.17.147.22",
         "188.114.97.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3"
+        "188.114.96.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
       ]
     },
     "independent_cache": true
@@ -92,7 +92,7 @@
       "sniff": true,
       "sniff_override_destination": true
     },
-    { 
+    {
       "type": "direct",
       "tag": "dns-in",
       "listen": "127.0.0.1",
@@ -105,10 +105,10 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇮🇷Danesh-IR1 § 0",
-        "🇩🇪Danesh-German1 § 1",
-        "🇮🇷Danesh-IR2 § 2",
-        "🇩🇪Danesh-German2(Main)✅ § 3"
+        "IR1 § 0",
+        "G1 § 1",
+        "IR2 § 2",
+        "G2 § 3"
       ],
       "default": "auto"
     },
@@ -116,13 +116,11 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇮🇷Danesh-IR1 § 0",
-        "🇩🇪Danesh-German1 § 1",
-        "🇮🇷Danesh-IR2 § 2",
-        "🇩🇪Danesh-German2(Main)✅ § 3"
+        "IR1 § 0",
+        "G1 § 1",
+        "IR2 § 2",
+        "G2 § 3"
       ],
-    
-     ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m0s",
       "tolerance": 1,
@@ -130,7 +128,7 @@
     },
     {
       "type": "wireguard",
-      "tag": "🇮🇷Danesh-IR1 § 0",
+      "tag": "IR1 § 0",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8588:13f3:439e:34b0:1f1a/128"
@@ -148,8 +146,8 @@
     },
     {
       "type": "wireguard",
-      "tag": "🇩🇪Danesh-German1 § 1",
-      "detour": "Danesh-IR1 § 0",
+      "tag": "G1 § 1",
+      "detour": "IR1 § 0",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8166:d876:64e4:33f1:a914/128"
@@ -159,17 +157,17 @@
       "server_port": 2371,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "PAXe",
-      "mtu": 1130
+      "mtu": 1180
     },
     {
       "type": "wireguard",
-      "tag": "🇮🇷Danesh-IR2 § 2",
+      "tag": "IR2 § 2",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8588:13f3:439e:34b0:1f1a/128"
       ],
       "private_key": "qJyq9HybrR06y8mnvr2i2o065oXPQHD1ARGtu32/BX0=",
-      "server": "b6m0l2onricuftpa6opz",
+      "server": "72gboktedcbblnkqgv9a",
       "server_port": 1701,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "kiGE",
@@ -181,8 +179,8 @@
     },
     {
       "type": "wireguard",
-      "tag": "🇩🇪Danesh-German2(Main)✅ § 3"
-      "detour":  "Danesh-IR2 § 2",
+      "tag": "G2 § 3",
+      "detour": "IR2 § 2",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8166:d876:64e4:33f1:a914/128"
@@ -192,7 +190,7 @@
       "server_port": 1070,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "PAXe",
-      "mtu": 1130
+      "mtu": 1180
     },
     {
       "type": "dns",
@@ -278,7 +276,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:16756",
-      "secret": "UEtzjWjhd2vnKbug"
+      "secret": "-BBMcQwDkB5vCvX5"
     }
   }
 }
