@@ -107,7 +107,7 @@
         "auto",
         "🇮🇷Danesh-IR1 § 0",
         "G1 § 1",
-        "🇮🇷Danesh-IR2 § 0",
+        "🇮🇷Danesh-IR2 § 2",
         "G2 § 3"
       ],
       "default": "auto"
@@ -118,7 +118,7 @@
       "outbounds": [
         "🇮🇷Danesh-IR1 § 0",
         "G1 § 1",
-        "🇮🇷Danesh-IR2 § 0",
+        "🇮🇷Danesh-IR2 § 2",
         "G2 § 3"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
@@ -161,7 +161,7 @@
     },
     {
       "type": "wireguard",
-      "tag": "🇮🇷Danesh-IR2 § 0",
+      "tag": "🇮🇷Danesh-IR2 § 2",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8588:13f3:439e:34b0:1f1a/128"
@@ -180,7 +180,7 @@
     {
       "type": "wireguard",
       "tag": "G2 § 3",
-      "detour": "🇮🇷Danesh-IR2 § 0",
+      "detour": "🇮🇷Danesh-IR2 § 2",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8166:d876:64e4:33f1:a914/128"
