@@ -4,7 +4,7 @@
     "output": "box.log",
     "timestamp": true
   },
-  "dns": {
+  "dns":
     "servers": [
       {
         "tag": "dns-remote",
@@ -105,9 +105,9 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "IR1 § 0",
+        "🇮🇷Danesh-IR1 § 0",
         "G1 § 1",
-        "IR2 § 2",
+        "🇮🇷Danesh-IR2 § 0",
         "G2 § 3"
       ],
       "default": "auto"
@@ -116,9 +116,9 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "IR1 § 0",
+        "🇮🇷Danesh-IR1 § 0",
         "G1 § 1",
-        "IR2 § 2",
+        "🇮🇷Danesh-IR2 § 0",
         "G2 § 3"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
@@ -128,7 +128,7 @@
     },
     {
       "type": "wireguard",
-      "tag": "IR1 § 0",
+      "tag": "🇮🇷Danesh-IR1 § 0",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8588:13f3:439e:34b0:1f1a/128"
@@ -147,7 +147,7 @@
     {
       "type": "wireguard",
       "tag": "G1 § 1",
-      "detour": "IR1 § 0",
+      "detour": "🇮🇷Danesh-IR1 § 0",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8166:d876:64e4:33f1:a914/128"
@@ -161,7 +161,7 @@
     },
     {
       "type": "wireguard",
-      "tag": "IR2 § 2",
+      "tag": "🇮🇷Danesh-IR2 § 0",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8588:13f3:439e:34b0:1f1a/128"
@@ -180,7 +180,7 @@
     {
       "type": "wireguard",
       "tag": "G2 § 3",
-      "detour": "IR2 § 2",
+      "detour": "🇮🇷Danesh-IR2 § 0",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8166:d876:64e4:33f1:a914/128"
