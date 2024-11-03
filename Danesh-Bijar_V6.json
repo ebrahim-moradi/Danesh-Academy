@@ -106,9 +106,9 @@
       "outbounds": [
         "auto",
         "Danesh-Iran1 § 0",
-        "Danesh-German1 § 1",
+        "Danesh-Germany1 § 1",
         "Danesh-Iran2 § 2",
-        "Danesh-German2 § 3"
+        "Danesh-Germany2 § 3"
       ],
       "default": "auto"
     },
@@ -117,9 +117,9 @@
       "tag": "auto",
       "outbounds": [
         "Danesh-Iran1 § 0",
-        "Danesh-German1 § 1",
+        "Danesh-Germany1 § 1",
         "Danesh-Iran2 § 2",
-        "Danesh-German2 § 3"
+        "Danesh-Germany2 § 3"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m0s",
@@ -146,7 +146,7 @@
     },
     {
       "type": "wireguard",
-      "tag": "Danesh-German1 § 1",
+      "tag": "Danesh-Germany1 § 1",
       "detour": "Danesh-Iran1 § 0",
       "local_address": [
         "172.16.0.2/24",
@@ -179,7 +179,7 @@
     },
     {
       "type": "wireguard",
-      "tag": "Danesh-German2 § 3"
+      "tag": "Danesh-Germany2 § 3",
       "detour": "Danesh-Iran2 § 2",
       "local_address": [
         "172.16.0.2/24",
