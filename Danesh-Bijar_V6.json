@@ -108,7 +108,8 @@
         "Danesh-Iran1 § 0",
         "Danesh-Germany1 § 1",
         "Danesh-Iran2 § 2",
-        "Danesh-Germany2 § 3"
+        "Danesh-Germany2 § 3",
+       "Create : Ebrahim Moradi § 4"
       ],
       "default": "auto"
     },
@@ -119,7 +120,8 @@
         "Danesh-Iran1 § 0",
         "Danesh-Germany1 § 1",
         "Danesh-Iran2 § 2",
-        "Danesh-Germany2 § 3"
+        "Danesh-Germany2 § 3",
+        "Create : Ebrahim Moradi § 4"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m0s",
