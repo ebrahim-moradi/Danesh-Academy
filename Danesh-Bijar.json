@@ -105,10 +105,11 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "m4 § 0",
-        "warp in warp § 1",
-        "LocalIP § 2",
-        "WarpInWarp✅ § 3"
+        "Danesh-Iran1 § 0",
+        "Danesh-Germany1 § 1",
+        "Danesh-Iran2 § 2",
+        "Danesh-Germany2 § 3"
+       
       ],
       "default": "auto"
     },
@@ -116,10 +117,11 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "m4 § 0",
-        "warp in warp § 1",
-        "LocalIP § 2",
-        "WarpInWarp✅ § 3"
+        "Danesh-Iran1 § 0",
+        "Danesh-Germany1 § 1",
+        "Danesh-Iran2 § 2",
+        "Danesh-Germany2 § 3"
+      
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m0s",
@@ -128,7 +130,7 @@
     },
     {
       "type": "wireguard",
-      "tag": "m4 § 0",
+      "tag": "Danesh-Iran1 § 0",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8588:13f3:439e:34b0:1f1a/128"
@@ -146,8 +148,8 @@
     },
     {
       "type": "wireguard",
-      "tag": "warp in warp § 1",
-      "detour": "m4 § 0",
+      "tag": "Danesh-Germany1 § 1",
+      "detour": "Danesh-Iran1 § 0",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8166:d876:64e4:33f1:a914/128"
@@ -161,7 +163,7 @@
     },
     {
       "type": "wireguard",
-      "tag": "LocalIP § 2",
+      "tag": "Danesh-Iran2 § 2",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8588:13f3:439e:34b0:1f1a/128"
@@ -179,8 +181,8 @@
     },
     {
       "type": "wireguard",
-      "tag": "WarpInWarp✅ § 3",
-      "detour": "LocalIP § 2",
+      "tag": "Danesh-Germany2 § 3",
+      "detour": "Danesh-Iran2 § 2",
       "local_address": [
         "172.16.0.2/24",
         "2606:4700:110:8166:d876:64e4:33f1:a914/128"
