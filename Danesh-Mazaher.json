@@ -34,39 +34,20 @@
     ],
     "rules": [
       {
-        "domain": "72gboktedcbblnkqgv9a",
-        "server": "dns-direct"
-      },
-      {
         "domain": "connectivitycheck.gstatic.com",
         "server": "dns-remote",
         "rewrite_ttl": 3000
-      },
-      {
-        "domain_suffix": ".ir",
-        "server": "dns-direct"
-      },
-      {
-        "rule_set": [
-          "geoip-ir",
-          "geosite-ir"
-        ],
-        "server": "dns-direct"
       }
     ],
     "final": "dns-remote",
     "static_ips": {
-      "72gboktedcbblnkqgv9a": [
-        "2606:4700:d1:0:4164:533e:ba72:bbec",
-        "188.114.98.215"
-      ],
       "sky.rethinkdns.com": [
         "104.17.148.22",
         "104.17.147.22",
-        "188.114.97.3",
-        "188.114.96.3",
-        "2a06:98c1:3121::3",
-        "2a06:98c1:3120::3"
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
+        "188.114.99.0",
+        "188.114.98.0"
       ]
     },
     "independent_cache": true
@@ -105,11 +86,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "Danesh-Iran1 § 0",
-        "Danesh-Germany1 § 1",
-        "Danesh-Iran2 § 2",
-        "Danesh-Germany2 § 3"
-       
+        "Tehran § 0",
+        "Berlin § 1"
       ],
       "default": "auto"
     },
@@ -117,11 +95,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "Danesh-Iran1 § 0",
-        "Danesh-Germany1 § 1",
-        "Danesh-Iran2 § 2",
-        "Danesh-Germany2 § 3"
-      
+        "Tehran § 0",
+        "Berlin § 1"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m0s",
@@ -130,68 +105,35 @@
     },
     {
       "type": "wireguard",
-      "tag": "Danesh-Iran1 § 0",
+      "tag": "Tehran § 0",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8588:13f3:439e:34b0:1f1a/128"
+        "2606:4700:110:8799:7510:bda3:28c0:78c7/128"
       ],
-      "private_key": "qJyq9HybrR06y8mnvr2i2o065oXPQHD1ARGtu32/BX0=",
-      "server": "188.114.96.49",
-      "server_port": 890,
+      "private_key": "KKgJkoQNRqH82rFhevbup5m+s+ntQkFQ++C+uJGPp38=",
+      "server": "188.114.99.159",
+      "server_port": 894,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "kiGE",
+      "reserved": "usgV",
       "mtu": 1330,
-      "fake_packets": "40-80",
-      "fake_packets_size": "40-100",
-      "fake_packets_delay": "4-8",
+      "fake_packets": "10-20",
+      "fake_packets_size": "20-60",
+      "fake_packets_delay": "5-10",
       "fake_packets_mode": "m4"
     },
     {
       "type": "wireguard",
-      "tag": "Danesh-Germany1 § 1",
-      "detour": "Danesh-Iran1 § 0",
+      "tag": "Berlin § 1",
+      "detour": "Tehran § 0",
       "local_address": [
         "172.16.0.2/24",
-        "2606:4700:110:8166:d876:64e4:33f1:a914/128"
+        "2606:4700:110:8a45:aff3:eea8:ed50:c921/128"
       ],
-      "private_key": "uCG74qYYLITaHtomsHmCE2s7d4el0Emtv5n6Ht8/Fn8=",
-      "server": "162.159.192.142",
-      "server_port": 859,
+      "private_key": "UIQrube4jrYnFqbwk/Z+M/4b6PS+qnm98+PZszolSlA=",
+      "server": "188.114.99.192",
+      "server_port": 946,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "PAXe",
-      "mtu": 1180
-    },
-    {
-      "type": "wireguard",
-      "tag": "Danesh-Iran2 § 2",
-      "local_address": [
-        "172.16.0.2/24",
-        "2606:4700:110:8588:13f3:439e:34b0:1f1a/128"
-      ],
-      "private_key": "qJyq9HybrR06y8mnvr2i2o065oXPQHD1ARGtu32/BX0=",
-      "server": "72gboktedcbblnkqgv9a",
-      "server_port": 1701,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "kiGE",
-      "mtu": 1330,
-      "fake_packets": "1-3",
-      "fake_packets_size": "10-30",
-      "fake_packets_delay": "10-30",
-      "fake_packets_mode": "m4"
-    },
-    {
-      "type": "wireguard",
-      "tag": "Danesh-Germany2 § 3",
-      "detour": "Danesh-Iran2 § 2",
-      "local_address": [
-        "172.16.0.2/24",
-        "2606:4700:110:8166:d876:64e4:33f1:a914/128"
-      ],
-      "private_key": "uCG74qYYLITaHtomsHmCE2s7d4el0Emtv5n6Ht8/Fn8=",
-      "server": "162.159.192.135",
-      "server_port": 890,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "PAXe",
+      "reserved": "CSHc",
       "mtu": 1180
     },
     {
@@ -238,33 +180,6 @@
           "HiddifyCli.exe"
         ],
         "outbound": "bypass"
-      },
-      {
-        "domain_suffix": ".ir",
-        "outbound": "direct"
-      },
-      {
-        "rule_set": [
-          "geoip-ir",
-          "geosite-ir"
-        ],
-        "outbound": "direct"
-      }
-    ],
-    "rule_set": [
-      {
-        "type": "remote",
-        "tag": "geoip-ir",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
-        "update_interval": "120h0m0s"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-ir",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
-        "update_interval": "120h0m0s"
       }
     ],
     "final": "select",
@@ -278,7 +193,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:16756",
-      "secret": "-BBMcQwDkB5vCvX5"
+      "secret": "vpo9hDuXj-pgF4yQ"
     }
   }
 }
