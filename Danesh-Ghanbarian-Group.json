@@ -20,6 +20,7 @@
         "tag": "dns-direct",
         "address": "1.1.1.1",
         "address_resolver": "dns-local",
+        "detour": "direct"
       },
       {
         "tag": "dns-local",
@@ -55,7 +56,12 @@
     ],
     "final": "dns-remote",
     "static_ips": {
-      "sky.rethinkdns.com": []
+      "sky.rethinkdns.com": [
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.96.3",
+        "188.114.97.3"
+      ]
     },
     "independent_cache": true
   },
@@ -81,8 +87,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "Danesh_HiSpeed1 § 0",
-        "Danesh_HiSpeed2 § 1"
+        "KevinVPN § 0",
+        "KevinVPN § 1"
       ],
       "default": "auto"
     },
@@ -90,8 +96,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "Danesh_HiSpeed1 § 0",
-        "Danesh_HiSpeed2 § 1"
+        "KevinVPN § 0",
+        "KevinVPN § 1"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m0s",
@@ -100,7 +106,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "Danesh_HiSpeed1 § 0",
+      "tag": "KevinVPN § 0",
       "server": "kevin.serverv.net",
       "server_port": 443,
       "obfs": {
@@ -115,7 +121,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "Danesh_HiSpeed2 § 1",
+      "tag": "KevinVPN § 1",
       "server": "kevin.serverv.net",
       "server_port": 8443,
       "obfs": {
@@ -211,7 +217,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:16756",
-      "secret": "MUN84z4DY9ujZDY_"
+      "secret": "LtVDGhNjHEwU_jLs"
     }
   }
 }
