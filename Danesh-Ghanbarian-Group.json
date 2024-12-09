@@ -87,8 +87,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "KevinVPN § 0",
-        "KevinVPN § 1"
+        "Danesh § 0",
+        "Danesh § 1"
       ],
       "default": "auto"
     },
@@ -96,8 +96,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "KevinVPN § 0",
-        "KevinVPN § 1"
+        "Danesh § 0",
+        "Danesh § 1"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m0s",
@@ -106,7 +106,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "KevinVPN § 0",
+      "tag": "Danesh § 0",
       "server": "kevin.serverv.net",
       "server_port": 443,
       "obfs": {
@@ -121,7 +121,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "KevinVPN § 1",
+      "tag": "Danesh § 1",
       "server": "kevin.serverv.net",
       "server_port": 8443,
       "obfs": {
